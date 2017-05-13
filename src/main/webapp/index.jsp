@@ -44,18 +44,18 @@
                     <div class="row">
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>perm_identity</i>
-                            <input id='nomb' type='text' name='nomb' value="${nomb}"/>
-                            <label for='nomb'>Nombre del colegio</label>
+                            <input id='nombCole' type='text' name='nombCole'/>
+                            <label for='nombCole'>Nombre del colegio</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>swap_calls</i>
-                            <input id='dire' type='text' name='dire' value="${dire}"/>
-                            <label for='dire'>Dirección del colegio</label>
+                            <input id='direCole' type='text' name='direCole'/>
+                            <label for='direCole'>Dirección del colegio</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>vpn_key</i>
-                            <input id='infr' type='text' name='infr' value="${infr}"/>
-                            <label for='infr'>Código de infraestructura</label>
+                            <input id='infrCole' type='text' name='infrCole'/>
+                            <label for='infrCole'>Código de infraestructura</label>
                         </div>
                     </div>
                     <div class='row center-align'>
@@ -96,7 +96,7 @@
         </div>
         <h3>Lista de Colegios</h3>
         <form method="POST" action="ColegiosServ" name="Tabl">
-            <table class="highlight" border="1">
+            <table class="highlight" border="2">
             <tr>
                 <th>Cons</th>
                 <th>Nombre</th>

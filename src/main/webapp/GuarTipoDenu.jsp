@@ -1,12 +1,12 @@
 <%-- 
-    Document   : guarCole
-    Created on : May 12, 2017, 11:17:39 PM
-    Author     : bernardo
+    Document   : guardarTipoDenu
+    Created on : 05-12-2017, 11:29:20 PM
+    Author     : DanielWilfredo
 --%>
-<%@page import="com.sv.udb.controlador.ColegiosCtrl"%>
+<%@page import="com.sv.udb.controlador.TipoDenunciasCtrl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="objeCole" class="com.sv.udb.modelo.Colegios"/>
-<jsp:setProperty property="*" name="objeCole"/>
+<jsp:useBean id="objeDenu" class="com.sv.udb.modelo.TipoDenuncias"/>
+<jsp:setProperty property="*" name="objeDenu"/>
 <%
     session = request.getSession(true);
     Object usuaActu = session.getAttribute("usuaActu");
@@ -14,9 +14,9 @@
     {
         response.sendRedirect("login.jsp");
     }
-    if(new ColegiosCtrl().guar(objeCole))
+    if(new TipoDenunciasCtrl().guar(objeDenu))
     {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("indexTipoDenu.jsp");
     }
     else
     {

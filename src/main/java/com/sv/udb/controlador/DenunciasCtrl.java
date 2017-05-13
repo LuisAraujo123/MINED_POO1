@@ -22,11 +22,12 @@ public class DenunciasCtrl {
         boolean resp = false;
         Connection cn = new Conexion().getConn();
         try {
-            PreparedStatement cmd = cn.prepareStatement("INSERT INTO denuncias VALUES(NULL, ?, ?, ?, ?, now(), default)");
-            cmd.setInt(1, obje.getCodiTipo());
-            cmd.setInt(2, obje.getCodiCole());
-            cmd.setString(3, obje.getDescDenu());
-            cmd.setBoolean(4, obje.isViabDenu());
+            PreparedStatement cmd = cn.prepareStatement("INSERT INTO denuncias VALUES(NULL, ?, ?, ?, ?, ?, now(), default)");
+            cmd.setString(1, obje.getCorrDenu());
+            cmd.setInt(2, obje.getCodiTipo());
+            cmd.setInt(3, obje.getCodiCole());
+            cmd.setString(4, obje.getDescDenu());
+            cmd.setBoolean(5, false);
             cmd.executeUpdate();
             resp = true;
             
@@ -57,12 +58,13 @@ public class DenunciasCtrl {
         boolean resp = false;
         Connection cn = new Conexion().getConn();
         try {
-            PreparedStatement cmd = cn.prepareStatement("update denuncias set codi_tipo = ?, codi_cole = ?, desc_denu = ?, viab_denu = ? where codi_denu = ?;");
-            cmd.setInt(1, obje.getCodiTipo());
-            cmd.setInt(2, obje.getCodiCole());
-            cmd.setString(3, obje.getDescDenu());
-            cmd.setBoolean(4, obje.isViabDenu());
-            cmd.setInt(5, obje.getCodiDenu());
+            PreparedStatement cmd = cn.prepareStatement("update denuncias set corr_denu = ?, codi_tipo = ?, codi_cole = ?, desc_denu = ?, viab_denu = ? where codi_denu = ?;");
+            cmd.setString(1, obje.getCorrDenu());
+            cmd.setInt(2, obje.getCodiTipo());
+            cmd.setInt(3, obje.getCodiCole());
+            cmd.setString(4, obje.getDescDenu());
+            cmd.setBoolean(5, obje.isViabDenu());
+            cmd.setInt(6, obje.getCodiDenu());
             cmd.executeUpdate();
             resp = true;
             
@@ -131,7 +133,7 @@ public class DenunciasCtrl {
             ResultSet rs = cmd.executeQuery();
             while (rs.next())
             {
-                resp.add(new Denuncias(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getBoolean(7), rs.getDate(8), rs.getBoolean(9)));
+                resp.add(new Denuncias(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7), rs.getBoolean(8), rs.getDate(9), rs.getBoolean(10)));
             }
         } catch (Exception ex) {
             System.err.println("Error: " + ex.getMessage());
@@ -165,7 +167,7 @@ public class DenunciasCtrl {
             ResultSet rs = cmd.executeQuery();
             if (rs.next())
             {
-                resp = (new Denuncias(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getBoolean(7), rs.getDate(8), rs.getBoolean(9)));
+                resp = new Denuncias(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7), rs.getBoolean(8), rs.getDate(9), rs.getBoolean(10));
             }
         } catch (Exception ex) {
             System.err.println("Error: " + ex.getMessage());

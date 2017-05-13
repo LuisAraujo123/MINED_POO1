@@ -17,6 +17,14 @@
         <title>JSP Page</title>
     </head>
     <body>
+    <%
+        session = request.getSession(true);
+        Object usuaActu = session.getAttribute("usuaActu");
+        if (usuaActu == null)
+        {
+            response.sendRedirect("login.jsp");
+        }
+    %>
     <header class='navbar-fixed'>
         <nav class='brown'>
             <div class='nav-wrapper'>
@@ -25,7 +33,7 @@
                 <ul class='right hide-on-med-and-down'>
                     <li><a href='libros.jsp'><i class='material-icons left'>shop</i></a></li>
                     <li><a href='index.jsp'><i class='material-icons left'>shop</i></a></li>
-                    <li><a href='#'><i class='material-icons left'>shop</i></a></li>
+                    <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -33,7 +41,7 @@
     <ul class='side-nav' id='mobile'>
         <li><a href='libros.jsp'><i class='material-icons left'>shop</i></a></li>
         <li><a href='index.jsp'><i class='material-icons left'>shop</i></a></li>
-        <li><a href='#'><i class='material-icons left'>shop</i></a></li>
+        <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>
     </ul>
     <main class='container'>
         <h3 class='center-align'>Administración de colegios</h3>
@@ -131,7 +139,7 @@
                 </div>
                 <div class='col s12 m6'>
                     <h5 class='white-text'>Enlaces</h5>
-                    <a class='white-text' href='' target='_blank'><i class='material-icons left'>store</i>Java web</a>
+                    <a class='white-text' href='hacerDenuncia.jsp' target='_blank'><i class='material-icons left'>visibility</i>Hacer una denuncia</a>
                 </div>
             </div>
         </div>

@@ -11,26 +11,28 @@ package com.sv.udb.modelo;
  */
 public class Usuarios {
     private int codiE;
+    private String nombrEmple;
     private String nombreE;
     private String contraE;
-    private String Correo;
+    private String correo;
+    private String dui_emple;
     private int codiPreE;
+    private String respuestaE;
 
-    @Override
-    public String toString() {
-        return this.nombreE ;
-    }
-
-    public Usuarios(int codiE, String nombreE, String contraE, String Correo, int codiPreE, String respuestaE) {
+    public Usuarios(int codiE, String nombrEmple, String nombreE, String contraE, String Correo, String dui_emple, int codiPreE, String respuestaE) {
         this.codiE = codiE;
+        this.nombrEmple = nombrEmple;
         this.nombreE = nombreE;
         this.contraE = contraE;
-        this.Correo = Correo;
+        this.correo = Correo;
+        this.dui_emple = dui_emple;
         this.codiPreE = codiPreE;
         this.respuestaE = respuestaE;
     }
 
-    public Usuarios() {
+    @Override
+    public String toString() {
+        return this.nombreE;
     }
 
     public int getCodiE() {
@@ -49,6 +51,22 @@ public class Usuarios {
         this.nombreE = nombreE;
     }
 
+    public String getNombrEmple() {
+        return nombrEmple;
+    }
+
+    public void setNombrEmple(String nombrEmple) {
+        this.nombrEmple = nombrEmple;
+    }
+
+    public String getDui_emple() {
+        return dui_emple;
+    }
+
+    public void setDui_emple(String dui_emple) {
+        this.dui_emple = dui_emple;
+    }
+
     public String getContraE() {
         return contraE;
     }
@@ -58,11 +76,11 @@ public class Usuarios {
     }
 
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
     public void setCorreo(String Correo) {
-        this.Correo = Correo;
+        this.correo = Correo;
     }
 
     public int getCodiPreE() {
@@ -80,7 +98,13 @@ public class Usuarios {
     public void setRespuestaE(String respuestaE) {
         this.respuestaE = respuestaE;
     }
-    private String respuestaE;
 
+    public Usuarios() {
+    }
+
+    
+    
+
+    
     
 }

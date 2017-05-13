@@ -13,6 +13,7 @@ import java.sql.Date;
  */
 public class Denuncias {
     private int codiDenu;
+    private String corrDenu;
     private int codiTipo;
     private String nombTipo;
     private int codiCole;
@@ -24,10 +25,11 @@ public class Denuncias {
     
     public Denuncias() {
         
-    } 
+    }
 
-    public Denuncias(int codiDenu, int codiTipo, String nombTipo, int codiCole, String nombCole, String descDenu, boolean viabDenu, Date fechDenu, boolean estaDenu) {
+    public Denuncias(int codiDenu, String corrDenu, int codiTipo, String nombTipo, int codiCole, String nombCole, String descDenu, boolean viabDenu, Date fechDenu, boolean estaDenu) {
         this.codiDenu = codiDenu;
+        this.corrDenu = corrDenu;
         this.codiTipo = codiTipo;
         this.nombTipo = nombTipo;
         this.codiCole = codiCole;
@@ -36,6 +38,14 @@ public class Denuncias {
         this.viabDenu = viabDenu;
         this.fechDenu = fechDenu;
         this.estaDenu = estaDenu;
+    }
+
+    public String getCorrDenu() {
+        return corrDenu;
+    }
+
+    public void setCorrDenu(String corrDenu) {
+        this.corrDenu = corrDenu;
     }
     
     public int getCodiCole() {

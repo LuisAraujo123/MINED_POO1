@@ -1,11 +1,12 @@
 <%-- 
-    Document   : guarCole
-    Created on : May 12, 2017, 11:17:39 PM
-    Author     : bernardo
+    Document   : guarUsua
+    Created on : 05-12-2017, 11:58:45 PM
+    Author     : leyes
 --%>
-<%@page import="com.sv.udb.controlador.ColegiosCtrl"%>
+
+<%@page import="com.sv.udb.controlador.UsuariosCtrl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="objeCole" class="com.sv.udb.modelo.Colegios"/>
+<jsp:useBean id="objeCole" class="com.sv.udb.modelo.Usuarios"/>
 <jsp:setProperty property="*" name="objeCole"/>
 <%
     session = request.getSession(true);
@@ -14,7 +15,7 @@
     {
         response.sendRedirect("login.jsp");
     }
-    if(new ColegiosCtrl().guar(objeCole))
+    if(new UsuariosCtrl().guar(objeCole))
     {
         response.sendRedirect("index.jsp");
     }
@@ -32,3 +33,4 @@
         <h1>Hello World!</h1>
     </body>
 </html>
+

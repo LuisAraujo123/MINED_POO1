@@ -56,12 +56,10 @@ public class DenunciasServ extends HttpServlet {
                             request.setAttribute("descDenu", obje.getDescDenu());
                             if (obje.isViabDenu())
                             {
-                                request.setAttribute("estaSi", "true");
-                                request.setAttribute("estaNo", "false");
+                                request.setAttribute("estaSi", "checked");
                             }
                             else{
-                                request.setAttribute("estaSi", "false");
-                                request.setAttribute("estaNo", "true");
+                                request.setAttribute("estaNo", "checked");
                             }
                                 
                         } catch (Exception e) {

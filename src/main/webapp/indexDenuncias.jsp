@@ -77,14 +77,14 @@
                 </div>
                 <div class="input-field col s12 center-align">
                     <i class="material-icons prefix">comment</i>
-                    <textarea id="descDenu" name="descDenu" class="materialize-textarea">${descDenu}</textarea>
+                    <textarea id="descDenu" name="descDenu" required class="materialize-textarea">${descDenu}</textarea>
                     <label for="descDenu">Descripción</label>
                 </div>
                 <div class="input-field col s12 m6 right-align">
                     <span>Viable:</span>
-                    <input id='si' type='radio' name='vali' class='with-gap' value='1' checked="${estaSi}" />
+                    <input id='si' type='radio' name='vali' class='with-gap' value='1' ${estaSi} />
                     <label for='si'><i class='material-icons left'>thumb_up</i></label>
-                    <input id='no' type='radio' name='vali' class='with-gap' value='0' checked="${estaNo}" />
+                    <input id='no' type='radio' name='vali' class='with-gap' value='0' ${estaNo} />
                     <label for='no'><i class='material-icons left'>thumb_down</i></label>
                 </div>
             </div>

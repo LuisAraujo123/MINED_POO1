@@ -37,34 +37,63 @@
     </ul>
     <main class='container'>
         <h3 class='center-align'>Administración de colegios</h3>
-        <form method="POST" action="ColegiosServ" name="Demo">
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <i class='material-icons prefix'>note_add</i>
-                    <input id='codi' type='text' name='codi' value="${codi}"/>
-                    <label for='codi'>Codigo</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <i class='material-icons prefix'>perm_identity</i>
-                    <input id='nomb' type='text' name='nomb' value="${nomb}"/>
-                    <label for='nomb'>Nombre del colegio</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <i class='material-icons prefix'>swap_calls</i>
-                    <input id='dire' type='text' name='dire' value="${dire}"/>
-                    <label for='dire'>Dirección del colegio</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <i class='material-icons prefix'>vpn_key</i>
-                    <input id='infr' type='number' name='infr' value="${infr}"/>
-                    <label for='infr'>Código de infraestructura</label>
-                </div>
+        <div class="row">
+            <div class="col s12 m6">
+                <h5 class='center-align'>Agregar colegios</h5>
+                <form method="POST" action="guarCole.jsp" name="Demo">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>perm_identity</i>
+                            <input id='nomb' type='text' name='nomb' value="${nomb}"/>
+                            <label for='nomb'>Nombre del colegio</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>swap_calls</i>
+                            <input id='dire' type='text' name='dire' value="${dire}"/>
+                            <label for='dire'>Dirección del colegio</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>vpn_key</i>
+                            <input id='infr' type='text' name='infr' value="${infr}"/>
+                            <label for='infr'>Código de infraestructura</label>
+                        </div>
+                    </div>
+                    <div class='row center-align'>
+                        <button class="btn waves-effect waves-light" ${estGuar} type="submit" name="btonLibr">Guardar<i class="material-icons right">send</i></button>
+                    </div>
+                </form>
             </div>
-            <div class='row center-align'>
-                <input class='btn waves-effect grey' ${estGuar} type="submit" name="btonLibr" value="Guardar">
-                <input class='btn waves-effect blue' ${estModi} type="submit" name="btonLibr" value="Modificar">
+            <div class="col s12 m6">
+                <form method="POST" action="ColegiosServ" name="Demo">
+                    <h5 class='center-align'>Modificar colegios</h5>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>note_add</i>
+                            <input id='codi' type='text' name='codi' value="${codi}"/>
+                            <label for='codi'>Codigo</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>perm_identity</i>
+                            <input id='nomb' type='text' name='nomb' value="${nomb}"/>
+                            <label for='nomb'>Nombre del colegio</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>swap_calls</i>
+                            <input id='dire' type='text' name='dire' value="${dire}"/>
+                            <label for='dire'>Dirección del colegio</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class='material-icons prefix'>vpn_key</i>
+                            <input id='infr' type='text' name='infr' value="${infr}"/>
+                            <label for='infr'>Código de infraestructura</label>
+                        </div>
+                    </div>
+                    <div class='row center-align'>
+                        <button class="btn waves-effect waves-light" ${estModi} type="submit" name="btonLibr">Modificar<i class="material-icons right">send</i></button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
         <h3>Lista de Colegios</h3>
         <form method="POST" action="ColegiosServ" name="Tabl">
             <table class="highlight" border="1">
@@ -80,8 +109,8 @@
             %>
             <c:forEach items="${listEquiJSTL}" var="temp">
                 <tr>
-                    <td><p><input type="radio" name="codiLibrRadi" class='with-gap' id="${temp.getCodiCole()}" value="${temp.getCodiCole()}"><label for="${temp.getCodiPres()}"></label></p></td>
-                    <td>${temp.getNombLibr()}</td>
+                    <td><p><input type="radio" name="codiLibrRadi" class='with-gap' id="${temp.getCodiCole()}" value="${temp.getCodiCole()}"><label for="${temp.getCodiCole()}"></label></p></td>
+                    <td>${temp.getNombCole()}</td>
                     <td>${temp.getDireCole()}</td>
                     <td>${temp.getInfrCole()}</td>
                 </tr>

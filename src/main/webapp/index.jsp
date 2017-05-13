@@ -37,6 +37,7 @@
     </ul>
     <main class='container'>
         <h3 class='center-align'>Administración de colegios</h3>
+        <h4 class="center-align red-text">${mensAler}</h4>
         <div class="row">
             <div class="col s12 m6">
                 <h5 class='center-align'>Agregar colegios</h5>
@@ -59,7 +60,7 @@
                         </div>
                     </div>
                     <div class='row center-align'>
-                        <button class="btn waves-effect waves-light" ${estGuar} type="submit" name="btonLibr">Guardar<i class="material-icons right">send</i></button>
+                        <button class="btn waves-effect waves-light" type="submit" name="btonCole">Guardar<i class="material-icons right">send</i></button>
                     </div>
                 </form>
             </div>
@@ -68,8 +69,8 @@
                     <h5 class='center-align'>Modificar colegios</h5>
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <i class='material-icons prefix'>note_add</i>
-                            <input id='codi' type='text' name='codi' value="${codi}"/>
+                            <i class='material-icons red-text prefix'>note_add</i>
+                            <input id='codi' readonly class='red-text' type='text' name='codi' value="${codi}"/>
                             <label for='codi'>Codigo</label>
                         </div>
                         <div class="input-field col s12 m6">
@@ -89,7 +90,7 @@
                         </div>
                     </div>
                     <div class='row center-align'>
-                        <button class="btn waves-effect waves-light" ${estModi} type="submit" name="btonLibr">Modificar<i class="material-icons right">send</i></button>
+                        <button class="btn waves-effect waves-light" type="submit" value="Modificar" name="btonCole">Modificar<i class="material-icons right">send</i></button>
                     </div>
                 </form>
             </div>
@@ -109,16 +110,16 @@
             %>
             <c:forEach items="${listEquiJSTL}" var="temp">
                 <tr>
-                    <td><p><input type="radio" name="codiLibrRadi" class='with-gap' id="${temp.getCodiCole()}" value="${temp.getCodiCole()}"><label for="${temp.getCodiCole()}"></label></p></td>
+                    <td><p><input type="radio" name="codiColeRadi" class='with-gap' id="${temp.getCodiCole()}" value="${temp.getCodiCole()}"><label for="${temp.getCodiCole()}"></label></p></td>
                     <td>${temp.getNombCole()}</td>
                     <td>${temp.getDireCole()}</td>
                     <td>${temp.getInfrCole()}</td>
                 </tr>
             </c:forEach>
             </table>
-            <input type="submit" name="btonLibr" value="Consultar">
-            <input ${estElim} type="submit" onclick="return confirm('¿Esta seguro de eliminar este registro?');" name="btonLibr" value="Eliminar">
-            <input type="submit" name="btonLibr" value="Nuevo">
+            <input type="submit" name="btonCole" value="Consultar">
+            <input type="submit" onclick="return confirm('¿Esta seguro de eliminar este registro?');" name="btonCole" value="Eliminar">
+            <input type="submit" name="btonCole" value="Nuevo">
         </form>
     </main>
     <footer class='page-footer brown'>

@@ -1,31 +1,25 @@
 <%-- 
-    Document   : index
-    Created on : May 13, 2017, 3:58:27 AM
-    Author     : bernardo
+    Document   : Autoridades
+    Created on : 05-12-2017, 11:45:10 PM
+    Author     : Jose Lira
 --%>
+<%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="com.sv.udb.controlador.AutoridadesCtrl"%>
+<%@page import="com.sv.udb.modelo.Autoridades"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel='stylesheet' href='webjars/Materialize/0.96.0/dist/css/materialize.min.css'>
+        <link rel='stylesheet' href='webjars/materialize/0.97.3/dist/css/materialize.min.css'>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="webjars/Materialize/0.96.0/dist/js/materialize.min.js"></script>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-        <title>Inicio</title>
+        <script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="webjars/materialize/0.97.3/dist/js/materialize.min.js"></script>
+        <title>JSP Page</title>
     </head>
     <body>
-    <%
-        session = request.getSession(true);
-        Object usuaActu = session.getAttribute("usuaActu");
-        if (usuaActu == null)
-        {
-            response.sendRedirect("login.jsp");
-        }
-    %>
-    <header class='navbar-fixed'>
+        <header class='navbar-fixed'>
         <nav class='brown'>
             <div class='nav-wrapper'>
                 <a href='index.jsp' class='brand-logo'><i class='material-icons left hide-on-med-and-down'>menu</i></a>
@@ -65,7 +59,80 @@
         <li><a href='usuarios.jsp'><i class='material-icons left'>perm_identity</i>Usuarios</a></li>
         <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>
     </ul>
-    <main class='container'>
+         <main class="container">
+        <h1>${mensAler}</h1>
+        <form method="POST" action="AutoridadesServ" name="DEMO" enctype="multipart/form-data">
+                    <label for="codi">Codigo:</label>
+                    <input type="text" name="codi" id="codi" value="${codi}" readonly> <br>
+                    <label for="nomb">Nombre:</label>
+                    <input type="text" name="nomb" id="nomb" value="${nomb}" required> <br>
+                    <label for="dire">Dirección</label>
+                    <input type="text" name="dire" id="dire" value="${dire}" required> <br>
+                    <label for="extr">Extr</label>
+                    <input type="text" name="extr" id="extr" value="${extr}" required> <br>
+                    <label for="nume">Numero</label>
+                    <input type="text" name="nume" id="nume" value="${nume}" required> <br>
+                       
+                            <c:if test="${codi==null}">
+                <button class="btn waves-effect waves-light" type="submit" name="btonAuto" value="Guardar"> Guardar
+                <i class="material-icons right">send</i>
+               
+                </button>
+                 </c:if>
+                                <c:if test="${codi != '' and codi!=null}">
+                <button class="btn waves-effect waves-light" type="submit" name="btonAuto" value="Modificar">Modificar
+                <i class="material-icons right">send</i>
+              
+                </button>
+                 
+                            
+                <button class="btn waves-effect waves-light" type="submit" name="btonAuto" value="Eliminar">Eliminar
+                <i class="material-icons right">send</i>
+                </button>
+                </c:if>
+                <button class="btn waves-effect waves-light" type="submit" name="btonAuto" value="Nuevo">Nuevo
+                <i class="material-icons right">send</i>
+                </button>
+        <ul>
+            <li><a href="index.jsp">Colegios</a></li>
+            <li><a href="repoServAutoridades">Reporte</a></li>
+            
+        </ul>            
+        </form>
+        
+        <h1>La Tabla</h1>
+        <form method="POST" action="AutoridadesServ" name="TABLA">
+        <table>
+            <thead>
+            <tr>
+                <th>Cons</th>
+                <th>Nombre</th>
+                <th>Dirección</th>      
+                <th>Extr</th>      
+                <th>Número</th>      
+            </tr>
+            </thead>
+            <tbody>  
+             <%
+                 pageContext.setAttribute("listAutJSTL", new AutoridadesCtrl().consTodo());
+            %>
+            <c:forEach items="${listAutJSTL}" var="temp">
+             <tr>
+                <td><p><input name="codiAutRadi" type="radio" id="${temp.codiAuto}" value="${temp.codiAuto}" />
+                        <label for="${temp.codiAuto}"></label></p></td>
+                <td>${temp.nombAuto}</td>
+                <td>${temp.direAuto}</td>                
+                <td>${temp.extrAuto}</td>                
+                <td>${temp.numeAuto}</td>                
+               
+            </tr>
+            </c:forEach>
+         </tbody>
+        </table>
+            <button class="btn waves-effect waves-light" type="submit" name="btonAuto" value="Consultar">Consultar
+            <i class="material-icons right">send</i>
+            </button>
+        </form>
     </main>
     <footer class='page-footer brown'>
         <div class='container'>

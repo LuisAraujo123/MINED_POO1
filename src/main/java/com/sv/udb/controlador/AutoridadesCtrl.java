@@ -104,7 +104,7 @@ public class AutoridadesCtrl {
         try
         {
             PreparedStatement cmd = cn.prepareStatement("Delete from autoridades where codi_auto = ?");
-            cmd.setString(1, String.valueOf(obje.getCodiAuto()));
+            cmd.setInt(1,obje.getCodiAuto());
             cmd.executeUpdate();
             resp=true;
         }
@@ -140,12 +140,11 @@ public class AutoridadesCtrl {
         try
         {
             PreparedStatement cmd = cn.prepareStatement("update autoridades set nomb_auto = ?, dire_auto=?, extr_auto = ?, nume_auto = ? where codi_auto=?;");
-            cmd.setString(1, String.valueOf(obje.getNombAuto())); 
-            cmd.setString(2, String.valueOf(obje.getDireAuto()));
-            cmd.setString(3, String.valueOf(obje.getExtrAuto()));
-            cmd.setString(4, obje.getNumeAuto());
-            cmd.setString(5, String.valueOf(obje.getCodiAuto()));
-;
+            cmd.setString(1,obje.getNombAuto()); 
+            cmd.setString(2,obje.getDireAuto());
+            cmd.setString(3,obje.getExtrAuto());
+            cmd.setString(4,obje.getNumeAuto());
+            cmd.setInt(5, obje.getCodiAuto());
             cmd.executeUpdate();
             resp=true;
         }

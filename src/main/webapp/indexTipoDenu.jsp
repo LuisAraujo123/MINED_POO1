@@ -37,16 +37,36 @@
                 <a href='index.jsp' class='brand-logo'><i class='material-icons left hide-on-med-and-down'>menu</i></a>
                 <a href='index.jsp' data-activates='mobile' class='button-collapse'><i class='material-icons'>menu</i></a>
                 <ul class='right hide-on-med-and-down'>
+                    <li>
+                        <a class='dropdown-button' href='#' data-activates='reportes'>
+                            <i class='material-icons left'>perm_media</i>
+                            Reportes
+                        </a>
+                    </li>
                     <li><a href='indexColegios.jsp'><i class='material-icons left'>settings_input_antenna</i>Colegios</a></li>
-                    <li><a href='indexTipoDenu.jsp'><i class='material-icons left'>note_add</i>Autoridades</a></li>
+                    <li><a href='Autoridades.jsp'><i class='material-icons left'>supervisor_account</i>Autoridades</a></li>
+                    <li><a href='indexDenuncias.jsp'><i class='material-icons left'>perm_media</i>Denuncias</a></li>
+                    <li><a href='indexTipoDenu.jsp'><i class='material-icons left'>note_add</i>Tipo de denuncias</a></li>
                     <li><a href='usuarios.jsp'><i class='material-icons left'>perm_identity</i>Usuarios</a></li>
                     <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>
+                </ul>
+                <ul id="reportes" class="dropdown-content">
+                    <li><a href='repoColeServ'><i class='material-icons left'>perm_media</i>Reporte colegios</a></li>
+                    <li><a href='RepoDenuServ'><i class='material-icons left'>perm_media</i>Reporte Denuncias</a></li>
+                    <li><a href='repoUsuaServ'><i class='material-icons left'>perm_media</i>Reporte Usuarios</a></li>
+                    <li><a href='repoServAutoridades'><i class='material-icons left'>perm_media</i>Reporte Autoridades</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <ul class='side-nav' id='mobile'>
+        <li><a href='repoColeServ'><i class='material-icons left'>perm_media</i>Reporte colegios</a></li>
+        <li><a href='RepoDenuServ'><i class='material-icons left'>perm_media</i>Reporte Denuncias</a></li>
+        <li><a href='repoUsuaServ'><i class='material-icons left'>perm_media</i>Reporte Usuarios</a></li>
+        <li><a href='repoServAutoridades'><i class='material-icons left'>perm_media</i>Reporte Autoridades</a></li>
         <li><a href='indexColegios.jsp'><i class='material-icons left'>settings_input_antenna</i>Colegios</a></li>
+        <li><a href='Autoridades.jsp'><i class='material-icons left'>supervisor_account</i>Autoridades</a></li>
+        <li><a href='indexDenuncias.jsp'><i class='material-icons left'>perm_media</i>Denuncias</a></li>
         <li><a href='indexTipoDenu.jsp'><i class='material-icons left'>note_add</i>Tipo de denuncias</a></li>
         <li><a href='usuarios.jsp'><i class='material-icons left'>perm_identity</i>Usuarios</a></li>
         <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>

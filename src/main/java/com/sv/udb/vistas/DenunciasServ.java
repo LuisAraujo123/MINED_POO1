@@ -47,7 +47,7 @@ public class DenunciasServ extends HttpServlet {
                 {
                     //El operador unario sirve como if para validar que el radio buton este selecionado, si no lo esta devuelve -1
                     int codi = Integer.parseInt(request.getParameter("codiDenuRadi").isEmpty() ? "-1" : request.getParameter("codiDenuRadi"));
-                    Denuncias obje = new DenunciasCtrl().consUno(codi);
+                    Denuncias obje = new DenunciasCtrl().consUno(codi+1);
                     if (obje != null)
                     {
                         try {
@@ -81,8 +81,10 @@ public class DenunciasServ extends HttpServlet {
                         obje.setCodiTipo(Integer.parseInt(request.getParameter("codiTipo")));
                         obje.setDescDenu(request.getParameter("descDenu"));
                         obje.setViabDenu(Boolean.valueOf(request.getParameter("vali")));
+                        System.err.println("Entro al if de codigo");
                         if (new DenunciasCtrl().upda(obje))
                         {
+                            System.err.println("Si modifico");
                             mens = "Datos modificados";
                             request.removeAttribute("codi");
                             request.removeAttribute("codiTipo");

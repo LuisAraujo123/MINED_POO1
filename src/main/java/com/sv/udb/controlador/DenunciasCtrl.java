@@ -58,13 +58,11 @@ public class DenunciasCtrl {
         boolean resp = false;
         Connection cn = new Conexion().getConn();
         try {
-            PreparedStatement cmd = cn.prepareStatement("update denuncias set corr_denu = ?, codi_tipo = ?, codi_cole = ?, desc_denu = ?, viab_denu = ? where codi_denu = ?;");
-            cmd.setString(1, obje.getCorrDenu());
-            cmd.setInt(2, obje.getCodiTipo());
-            cmd.setInt(3, obje.getCodiCole());
-            cmd.setString(4, obje.getDescDenu());
-            cmd.setBoolean(5, obje.isViabDenu());
-            cmd.setInt(6, obje.getCodiDenu());
+            PreparedStatement cmd = cn.prepareStatement("update denuncias set codi_tipo = ?, desc_denu = ?, viab_denu = ? where codi_denu = ?;");
+            cmd.setInt(1, obje.getCodiTipo());
+            cmd.setString(2, obje.getDescDenu());
+            cmd.setBoolean(3, obje.isViabDenu());
+            cmd.setInt(4, obje.getCodiDenu());
             cmd.executeUpdate();
             resp = true;
             
@@ -129,7 +127,7 @@ public class DenunciasCtrl {
         List<Denuncias> resp = new ArrayList<>();
         Connection cn = new Conexion().getConn();
         try {
-            PreparedStatement cmd = cn.prepareStatement("Select codi_denu, denuncias.codi_tipo, nomb_tipo, denuncias.codi_cole, nomb_cole, desc_denu, viab_denu, fech_denu, esta_denu from denuncias inner join tipo_denuncias on denuncias.codi_tipo = tipo_denuncias.codi_tipo inner join colegios on denuncias.codi_cole = colegios.codi_cole;");
+            PreparedStatement cmd = cn.prepareStatement("Select codi_denu, corr_denu, denuncias.codi_tipo, nomb_tipo, denuncias.codi_cole, nomb_cole, desc_denu, viab_denu, fech_denu, esta_denu from denuncias inner join tipo_denuncias on denuncias.codi_tipo = tipo_denuncias.codi_tipo inner join colegios on denuncias.codi_cole = colegios.codi_cole;");
             ResultSet rs = cmd.executeQuery();
             while (rs.next())
             {
@@ -162,7 +160,7 @@ public class DenunciasCtrl {
         Denuncias resp = null;
         Connection cn = new Conexion().getConn();
         try {
-            PreparedStatement cmd = cn.prepareStatement("Select codi_denu, denuncias.codi_tipo, nomb_tipo, denuncias.codi_cole, nomb_cole, desc_denu, viab_denu, fech_denu, esta_denu from denuncias inner join tipo_denuncias on denuncias.codi_tipo = tipo_denuncias.codi_tipo inner join colegios on denuncias.codi_cole = colegios.codi_cole and denuncias.codi_denu = ?;");
+            PreparedStatement cmd = cn.prepareStatement("Select codi_denu, corr_denu, denuncias.codi_tipo, nomb_tipo, denuncias.codi_cole, nomb_cole, desc_denu, viab_denu, fech_denu, esta_denu from denuncias inner join tipo_denuncias on denuncias.codi_tipo = tipo_denuncias.codi_tipo inner join colegios on denuncias.codi_cole = colegios.codi_cole and denuncias.codi_denu = ?;");
             cmd.setInt(1, id);
             ResultSet rs = cmd.executeQuery();
             if (rs.next())

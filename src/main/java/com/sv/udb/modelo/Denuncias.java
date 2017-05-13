@@ -63,8 +63,6 @@ public class Denuncias {
     public void setNombCole(String nombCole) {
         this.nombCole = nombCole;
     }
-
-    
     
     public String getNombTipo() {
         return nombTipo;

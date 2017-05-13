@@ -56,8 +56,6 @@ public class LoginServ extends HttpServlet {
                         try {
                             Encriptadora encr = new Encriptadora();
                             contra = encr.encrypt(contra);
-                            System.err.println(contra);
-                            System.err.println(obje.getContraE());
                             if(contra.equals(obje.getContraE()))
                             {
                                 HttpSession session = request.getSession(true);

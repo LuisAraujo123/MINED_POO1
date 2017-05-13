@@ -126,7 +126,6 @@ public class ColegiosServ extends HttpServlet {
                 ex.printStackTrace();
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             }
-            
         }
     }
 

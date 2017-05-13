@@ -45,17 +45,17 @@
                     <div class="row">
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>perm_identity</i>
-                            <input id='nombCole' type='text' name='nombCole'/>
+                            <input id='nombCole' type='text' name='nombCole' required/>
                             <label for='nombCole'>Nombre del colegio</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>swap_calls</i>
-                            <input id='direCole' type='text' name='direCole'/>
+                            <input id='direCole' type='text' name='direCole' required/>
                             <label for='direCole'>Dirección del colegio</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>vpn_key</i>
-                            <input id='infrCole' type='text' name='infrCole'/>
+                            <input id='infrCole' type='text' name='infrCole' maxlength="5" class='validate' pattern='^[\d]5}$' required/>
                             <label for='infrCole'>Código de infraestructura</label>
                         </div>
                     </div>
@@ -70,22 +70,22 @@
                     <div class="row">
                         <div class="input-field col s12 m6">
                             <i class='material-icons red-text prefix'>note_add</i>
-                            <input id='codi' readonly class='red-text' type='text' name='codi' value="${codi}"/>
+                            <input id='codi' readonly class='red-text' type='text' name='codi' value="${codi}" required/>
                             <label for='codi'>Codigo</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>perm_identity</i>
-                            <input id='nomb' type='text' name='nomb' value="${nomb}"/>
+                            <input id='nomb' type='text' name='nomb' value="${nomb}" required/>
                             <label for='nomb'>Nombre del colegio</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>swap_calls</i>
-                            <input id='dire' type='text' name='dire' value="${dire}"/>
+                            <input id='dire' type='text' name='dire' value="${dire}" required/>
                             <label for='dire'>Dirección del colegio</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <i class='material-icons prefix'>vpn_key</i>
-                            <input id='infr' type='text' name='infr' value="${infr}"/>
+                            <input id='infr' type='text' name='infr' maxlength="5" class='validate' pattern='^[\d]5}$' value="${infr}" required/>
                             <label for='infr'>Código de infraestructura</label>
                         </div>
                     </div>

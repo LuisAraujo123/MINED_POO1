@@ -27,20 +27,22 @@
     <header class='navbar-fixed'>
         <nav class='brown'>
             <div class='nav-wrapper'>
-                <a href='#' class='brand-logo'><i class='material-icons left hide-on-med-and-down'>menu</i></a>
-                <a href='#' data-activates='mobile' class='button-collapse'><i class='material-icons'>menu</i></a>
+                <a href='index.jsp' class='brand-logo'><i class='material-icons left hide-on-med-and-down'>menu</i></a>
+                <a href='index.jsp' data-activates='mobile' class='button-collapse'><i class='material-icons'>menu</i></a>
                 <ul class='right hide-on-med-and-down'>
-                    <li><a href='libros.jsp'><i class='material-icons left'>shop</i></a></li>
-                    <li><a href='index.jsp'><i class='material-icons left'>shop</i></a></li>
-                    <li><a href='#'><i class='material-icons left'>shop</i></a></li>
+                    <li><a href='indexColegios.jsp'><i class='material-icons left'>settings_input_antenna</i>Colegios</a></li>
+                    <li><a href='indexTipoDenu.jsp'><i class='material-icons left'>note_add</i>Tipo de denuncias</a></li>
+                    <li><a href='usuarios.jsp'><i class='material-icons left'>perm_identity</i>Usuarios</a></li>
+                    <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <ul class='side-nav' id='mobile'>
-        <li><a href='libros.jsp'><i class='material-icons left'>shop</i></a></li>
-        <li><a href='index.jsp'><i class='material-icons left'>shop</i></a></li>
-        <li><a href='#'><i class='material-icons left'>shop</i></a></li>
+        <li><a href='indexColegios.jsp'><i class='material-icons left'>settings_input_antenna</i>Colegios</a></li>
+        <li><a href='indexTipoDenu.jsp'><i class='material-icons left'>note_add</i>Autoridades</a></li>
+        <li><a href='usuarios.jsp'><i class='material-icons left'>perm_identity</i>Usuarios</a></li>
+        <li><a href='logout.jsp'><i class='material-icons left'>assignment_ind</i>Cerrar Sesión</a></li>
     </ul>
     <main class='container'>
         <h3 class='center-align'>Agregar usuarios</h3>

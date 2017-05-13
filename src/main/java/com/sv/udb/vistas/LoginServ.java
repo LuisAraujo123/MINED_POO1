@@ -81,8 +81,11 @@ public class LoginServ extends HttpServlet {
                 {
                     
                 }
-                request.setAttribute("mensAler", mens);
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                else
+                {
+                    request.setAttribute("mensAler", mens);
+                    request.getRequestDispatcher("/login.jsp").forward(request, response);
+                }
             }
             catch (Exception ex){
                 System.err.println(ex.getMessage());

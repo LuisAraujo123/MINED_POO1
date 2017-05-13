@@ -4,6 +4,7 @@
     Author     : bernardo
 --%>
 
+<%@page import="com.sv.udb.utilidades.Correos"%>
 <%@page import="com.sv.udb.controlador.DenunciasCtrl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="objeDenu" class="com.sv.udb.modelo.Denuncias"/>
@@ -21,7 +22,15 @@
     }
     if(new DenunciasCtrl().guar(objeDenu))
     {
-        request.setAttribute("mensAler", "Denuncia ingresada! Este pendiente de su correo electrónico.");
+        Correos envi = new Correos("Su denuncia esta siendo procesada, los operadores van a recibirla", (String)corrDenu, "Informe de denuncia");
+        if (envi.SendMail())
+        {
+            request.setAttribute("mensAler", "Denuncia ingresada! Este pendiente de su correo electrónico.");
+        }
+        else
+        {
+            request.setAttribute("mensAler", "Denuncia ingresada! Pero no se podra enviar notificaciones porque hubo problemas al enviarle el correo electrónico :(");
+        }        
     }
     else
     {

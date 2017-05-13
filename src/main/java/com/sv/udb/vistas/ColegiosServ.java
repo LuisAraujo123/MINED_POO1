@@ -38,7 +38,7 @@ public class ColegiosServ extends HttpServlet {
         System.err.println("Entra al process");
         if(!esValido)
         {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/indexColegios.jsp");
         }
         else {
             try{
@@ -118,13 +118,13 @@ public class ColegiosServ extends HttpServlet {
                     }                   
                 }
                 request.setAttribute("mensAler", mens);
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                request.getRequestDispatcher("/indexColegios.jsp").forward(request, response);
                 
             }
             catch (Exception ex){
                 System.err.println(ex.getMessage());
                 ex.printStackTrace();
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                request.getRequestDispatcher("/indexColegios.jsp").forward(request, response);
             }
         }
     }

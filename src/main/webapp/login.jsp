@@ -62,7 +62,6 @@
         </div>
         <div class='row center-align'>
             <button class="btn waves-effect waves-light" type="submit" value='Loguear' name="btonLogi">Iniciar Sesión<i class="material-icons right">send</i></button>
-            <button class="btn waves-effect waves-light" type="submit" value='Recuperar' name="btonLogi">Recuperar contra<i class="material-icons right">send</i></button>
         </div>
         </form>
     </main>
